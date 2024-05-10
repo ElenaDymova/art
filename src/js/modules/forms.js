@@ -1,15 +1,10 @@
-// import checkNumInputs from './checkNumInputs';
-import { postData } from "../services/requests";
+import {postData} from '../services/requests';
 
 const forms = () => {
     const form = document.querySelectorAll('form'),
           inputs = document.querySelectorAll('input'),
           upload = document.querySelectorAll('[name="upload"]');
-
-    //проверка полей, чтобы можно было ввести только цифры
-    //импортированная функция
-    // checkNumInputs('input[name="user_phone"]')
-
+    
     const message = {
         loading: 'Загрузка...',
         success: 'Спасибо! Скоро мы с вами свяжемся',
@@ -22,14 +17,14 @@ const forms = () => {
     const path = {
         designer: 'assets/server.php',
         question: 'assets/question.php'
-    }
-    
+    };
+
     const clearInputs = () => {
         inputs.forEach(item => {
             item.value = '';
         });
         upload.forEach(item => {
-            item.previousElementSibling.textContent = 'Файл не выбран';
+            item.previousElementSibling.textContent = "Файл не выбран";
         });
     };
 
@@ -38,6 +33,7 @@ const forms = () => {
             console.log(item.files[0]);
             let dots;
             const arr = item.files[0].name.split('.');
+
             arr[0].length > 6 ? dots = "..." : dots = '.';
             const name = arr[0].substring(0, 6) + dots + arr[1];
             item.previousElementSibling.textContent = name;
@@ -94,6 +90,4 @@ const forms = () => {
     });
 };
 
-export default forms; 
-
-
+export default forms;
