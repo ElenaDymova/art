@@ -11,6 +11,7 @@ import accordion from "./modules/accordion";
 import burger from "./modules/burger";
 import scrolling from "./modules/scrolling";
 
+
 window.addEventListener('DOMContentLoaded', () => {
     'use strict';
     modals();
